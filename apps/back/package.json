@@ -1,0 +1,25 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --inspect src/main.ts",
+    "test": "nodemon --inspect src/test.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@repo/agency": "workspace:*",
+    "dotenv": "^16.4.5",
+    "openai": "^4.29.2"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
