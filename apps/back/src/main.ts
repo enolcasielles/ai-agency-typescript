@@ -1,7 +1,7 @@
 import "dotenv/config";
-import { DemoAgency } from "./demo-agency";
+import { MathAgency } from "./maths-agency";
 
-const agency = new DemoAgency();
+const agency = new MathAgency();
 
 const run = async () => {
   try {
