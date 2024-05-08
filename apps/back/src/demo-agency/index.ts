@@ -27,6 +27,6 @@ export class DemoAgency extends Agency {
   }
 
   getDBPath(): string {
-    return path.resolve(__dirname, "./db");
+    return path.resolve(__dirname, "./.db");
   }
 }
