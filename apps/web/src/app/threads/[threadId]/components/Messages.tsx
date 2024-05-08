@@ -23,13 +23,18 @@ const Messages = () => {
           return (
             <div
               className={cn(
-                "flex items-start mt-4",
-                fromUser && "flex-row-reverse",
+                "flex items-start mt-4 pr-8",
+                fromUser && "flex-row-reverse pr-0 pl-8",
               )}
             >
               <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-900">
                 <p className="text-sm leading-snug">{message.content}</p>
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                <p
+                  className={cn(
+                    "mt-1 text-xs text-gray-500 dark:text-gray-400",
+                    fromUser && "text-right",
+                  )}
+                >
                   {format(new Date(message.date), "dd/MM/yyyy HH:mm:ss")}
                 </p>
               </div>
