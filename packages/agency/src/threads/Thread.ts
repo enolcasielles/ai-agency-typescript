@@ -115,10 +115,13 @@ export class Thread {
       );
       const toolName = toolToExecute.function.name;
       const tool = this.recipientAgent.tools.find((t) => t.name === toolName);
-      const toolResult = await tool.run({
-        ...JSON.parse(toolToExecute.function.arguments),
-        callerAgent: this.recipientAgent,
-      });
+      const toolResult = tool
+        ? await tool.run({
+            ...JSON.parse(toolToExecute.function.arguments),
+            callerAgent: this.recipientAgent,
+          })
+        : "ERROR: no existe ninguna herramienta con el nombre que has indicado. Inténtalo de nuevo con el nombre correcto. La lista de herramientas disponibles es la siguiente: " +
+          this.recipientAgent.tools.map((t) => t.name).join(", ");
       this.addNewMessage(
         MessageType.Action,
         `${toolToExecute.function.name} completada. Respuesta: ${toolResult.toString()}`,
