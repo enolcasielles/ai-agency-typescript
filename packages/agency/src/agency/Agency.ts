@@ -82,7 +82,6 @@ export abstract class Agency implements ThreadDelegate, AgentDelegate {
   }
 
   getThread(senderAgentName: string, recipientAgentName: string) {
-    console.log("getThread", senderAgentName, recipientAgentName);
     return this.threads.find(
       (thread) =>
         thread.senderAgent.name === senderAgentName &&

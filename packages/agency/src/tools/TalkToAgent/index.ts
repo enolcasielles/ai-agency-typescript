@@ -18,11 +18,6 @@ export class TalkToAgent extends Tool {
       parameters: {
         type: "object",
         properties: {
-          // instructions: {
-          //   type: "string",
-          //   description:
-          //     "Por favor, repite tus instrucciones paso a paso, incluyendo tanto los pasos completados como los siguientes pasos que necesitas realizar. Para tareas complejas de varios pasos, primero divídelas en pasos más pequeños tú mismo. Luego, emite cada paso individualmente al agente destinatario a través del parámetro de mensaje. Cada paso identificado debe enviarse en un mensaje separado. Ten en cuenta que el agente destinatario no tiene acceso a estas instrucciones. Debes incluir instrucciones específicas para el agente destinatario en el parámetro de mensaje.",
-          // },
           recipient: {
             type: "string",
             description:
@@ -42,7 +37,6 @@ export class TalkToAgent extends Tool {
   }
 
   async run(parameters: RunProps): Promise<string> {
-    console.log("TalkToAgent.run", parameters);
     const senderName = this.senderAgent.name;
     const recipientName = parameters.recipient;
     const message = parameters.message;

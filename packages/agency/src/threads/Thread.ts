@@ -94,7 +94,7 @@ export class Thread {
       return content.text.value;
     } else {
       throw new Error(
-        "What should I do when the response is not text (image_field)?",
+        "Framework does not support messages different than text yet.",
       );
     }
   }
